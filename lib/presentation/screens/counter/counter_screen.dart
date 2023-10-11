@@ -36,7 +36,7 @@ class _CounterState extends State<Counter> {
                 }
                 });
             },
-              child: const Icon(Icons.plus_one),
+              child: const Icon(Icons.add),
           ),
           const SizedBox(height: 10),
           FloatingActionButton(
@@ -47,7 +47,7 @@ class _CounterState extends State<Counter> {
                   text = "No se puede bajar de 0";
                   }
                 });
-              }, child: const Icon(Icons.exposure_minus_1)),
+              }, child: const Icon(Icons.minimize)),
         ],
       ),
     );

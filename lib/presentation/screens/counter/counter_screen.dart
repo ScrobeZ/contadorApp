@@ -14,6 +14,12 @@ class _CounterState extends State<Counter> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Center(
+          child: Text('Counter', style: TextStyle(fontSize: 32)
+          )
+        ),
+        ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -50,7 +56,7 @@ class _CounterState extends State<Counter> {
                   );
                 },
               ),
-              
+
               const SizedBox(width: 15),
               CustomButton(
                 icon: Icons.minimize,

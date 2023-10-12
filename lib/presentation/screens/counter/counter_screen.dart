@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:guillermo_grellas/presentation/widgets/custom_button.dart';
 class Counter extends StatefulWidget {
   const Counter({super.key});
   @override
@@ -27,18 +28,17 @@ class _CounterState extends State<Counter> {
           ],
         ),
       ),
-      floatingActionButton:
-      Column(
+      floatingActionButton: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(height: size.height*0.75,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              
-              FloatingActionButton(
-                onPressed: () {
-                    setState(() {
+              CustomButton(
+                icon: Icons.add, 
+                onPressed: (){
+                  setState(() {
                     countador ++;
                     if (countador > 0) {
                     text = 'Click';
@@ -49,32 +49,32 @@ class _CounterState extends State<Counter> {
                     }
                   );
                 },
-                child: const Icon(Icons.add),
               ),
+              
               const SizedBox(width: 15),
-              FloatingActionButton(
-                onPressed: () {
-                    setState(() {
+              CustomButton(
+                icon: Icons.minimize,
+                onPressed: (){
+                  setState(() {
                     if (countador == 0) {
                       text = "No se puede bajar de 0";
                       }else{
                         countador --;
                         countador==1?text='Click':text='Clicks';
                       }
-                    });
-                  }, 
-                child: const Icon(Icons.minimize),
+                    }
+                  );
+                },
               ),
               const SizedBox(width: 15),
-              FloatingActionButton(
+              CustomButton(
+                icon: Icons.refresh_rounded,
                 onPressed: (){
-                  countador=0;
                   setState(() {
-                    
+                    countador=0;
                   });
-                  },
-                child: const Icon(Icons.refresh_rounded),
-                ),
+                },
+              ),
             ],
               
           ),
